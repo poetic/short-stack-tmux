@@ -1,6 +1,7 @@
 Short Stack: Tmux
 =========
 [![Build Status](https://travis-ci.org/poetic/short-stack-tmux.svg)](https://travis-ci.org/poetic/short-stack-tmux)
+
 Installs tmux and common configuration.
 
 Requirements

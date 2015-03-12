@@ -1,32 +1,34 @@
 ---
-- name: install/update tmux
+- name: ensures tmux is installed/updated
   homebrew: name=tmux state=latest
 
-- name: add copy/paste support
+- name: ensure copy/paste support (reattach-to-user-namespace) is installed/updated
   homebrew: name=reattach-to-user-namespace state=latest
 
-- name: add common tmux configuration
-  copy: src=common.tmux dest={{ stack_d }}
+- name: ensure common tmux configuration is installed
+  copy: src=tmux.tmux dest={{ stack_d }}
   notify: update tmux config
 
-- name: add tmux plugins to vim
+- name: ensure tmux vim bundle is added to stack.d
   copy: src=tmux.bundle dest={{ stack_d }}/tmux.bundle
   notify: vim bundle install
+  when: "'vim' in role_names"
 
-- name: add tmux zsh configuration
+- name: ensure tmux zsh configuration exists
   copy: src=tmux.zsh dest={{ stack_d }}
+  when: "'zsh' in role_names"
 
 - name: ensure ~/Library/Fonts directory exists
   file: path=~/Library/Fonts state=directory
 
-- name: tap caskroom/cask so that brew-cask can be installed
+- name: ensure caskroom/cask is tapped so that brew cask can be installed
   homebrew_tap: tap=caskroom/cask state=present
 
-- name: install/update brew cask
+- name: ensure brew-cask is installed/updated
   homebrew: name=brew-cask state=latest
 
-- name: tap caskroom/fonts
+- name: ensure caskroom/fonts is tapped
   homebrew_tap: tap=caskroom/fonts state=present
 
-- name: ensure inconsolata-g exists
+- name: ensure inconsolata-g is present
   homebrew_cask: name=font-inconsolata-g-for-powerline state=present
