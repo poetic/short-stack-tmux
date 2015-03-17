@@ -6,7 +6,10 @@
   homebrew: name=reattach-to-user-namespace state=latest
 
 - name: ensure common tmux configuration is installed
-  copy: src=tmux.tmux dest={{ stack_d }}
+  copy: src={{ item }} dest={{ stack_d }}
+  with_items:
+    - tmux.tmux
+    - solarized.tmux
   notify: update tmux config
 
 - name: ensure tmux vim bundle is added to stack.d
