@@ -9,6 +9,6 @@
   lineinfile:
   args:
     dest: ~/.tmux.conf
-    line: source {{ stack_d }}/common.tmux
+    line: source {{ item }}
     create: yes
   with_items: stack_d_tmux.stdout_lines
