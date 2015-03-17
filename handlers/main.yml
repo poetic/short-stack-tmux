@@ -9,6 +9,6 @@
   lineinfile:
   args:
     dest: ~/.tmux.conf
-    line: source {{ item }}
+    line: source {{ stack_d }}/{{ item }}
     create: yes
   with_items: stack_d_tmux.stdout_lines
