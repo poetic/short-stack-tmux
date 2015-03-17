@@ -12,11 +12,9 @@
 - name: ensure tmux vim bundle is added to stack.d
   copy: src=tmux.bundle dest={{ stack_d }}/tmux.bundle
   notify: vim bundle install
-  when: "'vim' in role_names"
 
 - name: ensure tmux zsh configuration exists
   copy: src=tmux.zsh dest={{ stack_d }}
-  when: "'zsh' in role_names"
 
 - name: ensure ~/Library/Fonts directory exists
   file: path=~/Library/Fonts state=directory
