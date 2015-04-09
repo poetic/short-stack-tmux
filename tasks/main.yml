@@ -2,6 +2,9 @@
 - name: ensures tmux is installed/updated
   homebrew: name=tmux state=latest
 
+- name: ensure tmux.conf exists
+  copy: src=tmux.conf dest=~/.tmux.conf
+
 - name: ensure copy/paste support (reattach-to-user-namespace) is installed/updated
   homebrew: name=reattach-to-user-namespace state=latest
 
@@ -10,10 +13,7 @@
   with_items:
     - tmux.tmux
     - solarized.tmux
-  notify: update tmux config
-
-- name: ensure tmux vim bundle is added to stack.d
-  copy: src=tmux.bundle dest={{ stack_d }}/tmux.bundle
+    - tmux.bundle
   notify: vim bundle install
 
 - name: ensure tmux zsh configuration exists
