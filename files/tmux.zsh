@@ -1,1 +1,3 @@
-plugins+=(tmux) # TODO: remove this plugin and add better aliases than this provides
+alias tma="tmux attach -t"
+alias tmn="tmux new -s"
+alias tml="tmux ls
