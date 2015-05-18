@@ -67,3 +67,6 @@ set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 
 tmux_conf_battery_symbol=heart
 tmux_conf_battery_symbol_count=5
+
+# don't automatically rename windows
+set-option -g allow-rename off
