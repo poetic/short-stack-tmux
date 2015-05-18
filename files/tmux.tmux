@@ -70,3 +70,9 @@ tmux_conf_battery_symbol_count=5
 
 # don't automatically rename windows
 set-option -g allow-rename off
+
+# c will create new window in next position
+bind-key c new-window -a
+
+# C to create window in last position
+bind-key C new-window
