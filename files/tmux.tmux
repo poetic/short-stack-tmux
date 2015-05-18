@@ -79,8 +79,8 @@ bind-key c new-window -a -c '#{pane_current_path}'
 # C to create window in last position and in current working directory
 bind-key C new-window -c '#{pane_current_path}'
 
-# Control H to move window left
-bind -r H swap-window -t -1
+# Leader P to move window left
+bind-key P swap-window -t -1
 
-# Control L to move window right
-bind -r L swap-window -t +1
+# Leader N to move window right
+bind-key N swap-window -t +1
