@@ -1,6 +1,8 @@
 #set-option -g default-command "reattach-to-user-namespace -l zsh"
 set -g prefix C-a
 unbind %
+
+# Use pipes to open splits
 bind \ split-window -h -c '#{pane_current_path}'
 bind - split-window -v -c '#{pane_current_path}'
 
