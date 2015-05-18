@@ -73,8 +73,8 @@ tmux_conf_battery_symbol_count=5
 # don't automatically rename windows
 set-option -g allow-rename off
 
-# c will create new window in next position
-bind-key c new-window -a
+# c will create new window in next position and in current working directory
+bind-key c new-window -a -c '#{pane_current_path}'
 
-# C to create window in last position
-bind-key C new-window
+# C to create window in last position and in current working directory
+bind-key C new-window -c '#{pane_current_path}'
