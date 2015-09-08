@@ -84,3 +84,7 @@ bind-key P swap-window -t -1
 
 # Leader N to move window right
 bind-key N swap-window -t +1
+
+
+# when we use esc key, do not wait
+set -s escape-time 0
