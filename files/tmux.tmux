@@ -67,3 +67,6 @@ set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 
 tmux_conf_battery_symbol=heart
 tmux_conf_battery_symbol_count=5
+
+# when we use esc key, do not wait
+set -s escape-time 0
