@@ -31,3 +31,5 @@
 - name: ensure caskroom/fonts is tapped
   homebrew_tap: tap=caskroom/fonts state=present
 
+- name: ensure inconsolata-g is present
+  homebrew_cask: name=font-inconsolata-g-for-powerline state=present
