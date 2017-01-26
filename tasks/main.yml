@@ -25,9 +25,6 @@
 - name: ensure caskroom/cask is tapped so that brew cask can be installed
   homebrew_tap: tap=caskroom/cask state=present
 
-- name: ensure brew-cask is installed/updated
-  homebrew: name=brew-cask state=latest
-
 - name: ensure caskroom/fonts is tapped
   homebrew_tap: tap=caskroom/fonts state=present
 
