@@ -14,4 +14,5 @@ galaxy_info:
    - short-stack
   categories:
    - system
+   - short-stack
 dependencies: []
