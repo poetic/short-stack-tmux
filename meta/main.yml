@@ -11,8 +11,6 @@ galaxy_info:
       - 10.9
       - 10.10
   galaxy_tags:
-   - short-stack
-  categories:
    - system
    - short-stack
 dependencies: []
