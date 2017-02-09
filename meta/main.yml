@@ -10,6 +10,8 @@ galaxy_info:
      versions:
       - 10.9
       - 10.10
+  galaxy_tags:
+   - short-stack
   categories:
    - system
 dependencies: []
